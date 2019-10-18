@@ -1,0 +1,36 @@
+<div class="container-fluid">
+    <div class='mt-5 mb-4 ml-4'>
+        <h4>반복 관용어구 생성</h4>
+    </div>
+    <div class='mb-2 ml-4'>
+        <p>반복관용어구의 태그를 정의해 주세요. 하나의 프로젝트 내에서는 유일값이어야 합니다.</p>
+    </div>
+    <form id='frmPredicate'>
+        <div class="row ml-3">
+            <div class="form-group col-5">
+                <input type="text" class="form-control" id="txtTagName" name="txtTagName" placeholder="반복관용어구 태그명">
+            </div>
+            <div class="form-group col-3">
+                <select class="form-control custom-select" id="selTagSuffix" name="selTagSuffix">
+                    <option value="">== 종결어미 선택 ==</option>
+                    <option value="평서형">평서형</option>
+                    <option value="의문형">의문형</option>
+                    <option value="명령형">명령형</option>
+                    <option value="청유형">청유형</option>
+                    <option value="약속형">약속형</option>
+                    <option value="감탄형">감탄형</option>
+                    <option value="연결형">연결형</option>
+                    <option value="기타형">기타형</option>
+                </select>
+            </div>
+            <div class="form-group col-2">
+                <button type="button" class="btn btn-primary" id="btnNewPredicate" data-path="predicate">생성</button>
+            </div>
+            <div class="col-2"></div>
+        </div>
+    </form>
+    <div class="ml-5">
+        <label id="lblTagValue"></label>
+    </div>
+</div>
+<script src="js/chatcor/chatcor-predicate.js"></script>

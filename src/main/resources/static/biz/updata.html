@@ -1,0 +1,37 @@
+<div class="container-fluid">
+    <div class='mt-2 mb-4 pl-2'>
+        <h3>데이터 업로드</h3>
+    </div>
+    <div class='row mb-4 pl-2'>
+        <div class='col-md-10 mb-5'>
+            <p class="text-break">
+                            외부에서 수집된 용어 목록이나 분석하고자 하는 문장을 업로드 할 수 있습니다. 일반 문서 자료도 업로드 되면 문장 단위로 분절 되며, 개별 파일에 저장됩니다.
+            </p>
+            <form id='frmUpData' enctype="multipart/form-data">
+                <div class="form-group col-7">
+                    <label for="selUpProjects">프로젝트 이름</label>
+                    <select class="form-control" id="selUpProjects" name="selUpProjects"></select>
+                    <div class='row mt-2 pl-3'>
+                        <div class="custom-control custom-radio mr-5">
+                            <input type="radio" class="custom-control-input" id="rdEntity" name="rdSelInfo" value="1">
+                            <label class="custom-control-label" for="rdEntity">용어 정보</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" class="custom-control-input" id="rdSentence" name="rdSelInfo" value="2">
+                            <label class="custom-control-label" for="rdSentence">문장 정보</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-7">
+                    <label for="flUpFileData">파일 선택</label>
+                    <input type="file" id="flUpFileData" name="flUpFileData">
+                </div>
+                <div class='text-right col-7'>
+                    <button type="button" class="btn btn-primary" id="btnUpData">업로드</button>
+                </div>
+            </form>
+        </div>
+        <div class='col-md-3 mb-5'></div>
+    </div>
+</div>
+<script src="js/chatcor/chatcor-updata.js"></script>

@@ -1,0 +1,37 @@
+<div class="container-fluid">
+    <div class='mt-2 mb-4 pl-2'>
+        <h3>데이터 생성</h3>
+    </div>
+    <div class='row mb-4 pl-2'>
+        <div class='col-md-10 mb-5'>
+            <p class="text-break">
+                            만들어내고자 하는 관련 포맷을 선택합니다. 프로젝트의 폴더에 zip 파일 포맷으로 데이터가 생성됩니다.
+            </p>
+            <form id='frmMkData'>
+                <div class="form-group col-7">
+                    <label for="selMkProjects">호환 프로젝트</label>
+                    <select class="form-control" id="selMkProjects" name="selMkProjects"></select>
+                    <div class='row pl-3'>
+                        <div class="custom-control custom-checkbox mr-5">
+                            <input type="checkbox" class="custom-control-input" id="cbxIntent" name="cbxIntent" checked>
+                            <label class="custom-control-label" for="cbxIntent">Intent</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="cbxEntity" name="cbxEntity" checked>
+                            <label class="custom-control-label" for="cbxEntity">Entity</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group  col-7">
+                    <label for="txtProjectFileName">생성 파일 이름 (확장자를 제외하고 입력해 주시기 바랍니다.)</label>
+                    <input type="text" class="form-control" id="txtProjectFileName" name="txtProjectFileName" placeholder="파일 이름">
+                </div>
+                <div class='text-right col-7'>
+                    <button type="button" class="btn btn-primary" id="btnMkData">데이터 생성</button>
+                </div>
+            </form>
+        </div>
+        <div class='col-md-3 mb-5'></div>
+    </div>
+</div>
+<script src="js/chatcor/chatcor-mkdata.js"></script>

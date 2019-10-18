@@ -1,0 +1,17 @@
+
+/* Tooltip 가로 크기 다시 지정  */
+.tooltip-inner {
+    max-width: 100% !important;
+}
+/* Badge 크기 지정 (픽셀 지정) */
+.badge-h60p {
+    height: 60px !important;
+}
+
+.min-w74p {
+    min-width: 74px !important;
+}
+
+.max-w74p {
+    max-width: 74px !important;
+}
