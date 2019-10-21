@@ -2,6 +2,8 @@
 
 This repository provides ChatBot Corpus authoring environments based on lexical analysis. This project is especially good for agglutinative languages.
 
+(translated by Google Translation. It will be reviewed by Jesse Jeong, Project director)
+
 The abstract concept of artificial intelligence has gone through many bends. It has been used a lot as the subject of film, and it is also covered in the humanities such as what kind of artificial intelligence will produce, self, etc. in the future. At first, it has been said that AI will solve all of human beings, but the recent AI approach has been broken down into more areas, focusing on how to solve problems in each industry. This aspect is quite encouraging in terms of technology development.
 
 What makes humans the most human is the legal system that supports them, along with a highly knowledgeable system of language and letters. So the starting point of AI also started with language. Today, we are educating the most basic information such as how to recognize objects, how to stand and walk, which are the most basic interface for human beings, but in the future, we will dig into the logical area, the area of ​​knowledge. . Currently, technology is advanced in the form of Knowledge Graph, but as people's thoughts become logical, they will continue to hover (chicken first or egg first). is.
