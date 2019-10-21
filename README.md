@@ -1,6 +1,12 @@
 # About ChatCor project
-Arti
-This repository provides ChatBot Corpus authoring environments based on lexical analysis. This project is especially good for agglutinative languages. 
+
+This repository provides ChatBot Corpus authoring environments based on lexical analysis. This project is especially good for agglutinative languages.
+
+The abstract concept of artificial intelligence has gone through many bends. It has been used a lot as the subject of film, and it is also covered in the humanities such as what kind of artificial intelligence will produce, self, etc. in the future. At first, it has been said that AI will solve all of human beings, but the recent AI approach has been broken down into more areas, focusing on how to solve problems in each industry. This aspect is quite encouraging in terms of technology development.
+
+What makes humans the most human is the legal system that supports them, along with a highly knowledgeable system of language and letters. So the starting point of AI also started with language. Today, we are educating the most basic information such as how to recognize objects, how to stand and walk, which are the most basic interface for human beings, but in the future, we will dig into the logical area, the area of ​​knowledge. . Currently, technology is advanced in the form of Knowledge Graph, but as people's thoughts become logical, they will continue to hover (chicken first or egg first). is.
+
+Instead, what I'm focusing on is how to construct a chatbot in terms of deadlock, refractive and isolation. And what is the problem with configuring a chatbot in an enterprise environment, and what is the problem with the projects that have been done so far? In conclusion, most customers know the answer. Nobody knows banking as well as banking. The administrative process makes the final decision and decides everything. In other words, the customer is ready to answer.
 
 
 # 한국어 소개문
@@ -33,17 +39,17 @@ This repository provides ChatBot Corpus authoring environments based on lexical 
 
 본 프로젝트는 큰 관점에서 개발 관점의 이슈를 집중 관리하는 프로젝트입니다. 데이터 관련해서는 ChatCorDataLab에 접속해주세요.
 
-##프로젝트를 시작하는 방법
+## 프로젝트를 시작하는 방법
 
 본 프로젝트를 시작하기 위해서는 개방형OS가 설치되어있어야 하며, 자체적으로 확보한 형태소 분석기가 있어야 합니다. 형태소 분석기는 공개SW로 된 버전이 될 수도 있으며 상용버전, 혹은 직접 개발한 것일 수도 있습니다. 형태소 분석기와 편집기의 인터페이스 사이에는 변환 관련 별도의 코딩을 해야 합니다.
 
-##프로젝트에 참여하는 방법
+## 프로젝트에 참여하는 방법
 
 본 프로젝트의 커미터가 되어주세요. 향후 다양한 챗봇 개발 관련 기술지원 이슈를 제공받게 됩니다.
 
 아울러 여러가지 샘플 데이터를 통하여 챗봇의 성능을 향상시키는 방법을 배울 수 있습니다.
 
-##라이선스
+## 라이선스
 
 본 프로젝트는 Apache 2.0 라이선스를 준용합니다.
 
