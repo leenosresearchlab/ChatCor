@@ -1,0 +1,63 @@
+<div class="container-fluid">
+    <div class='mt-2 mb-4 pl-2'>
+        <h3>프로젝트 생성</h3>
+    </div>
+    <div class='row mb-4 pl-2'>
+        <div class='col-md-10 mb-5'>
+            <p class="text-break mb-0">
+                             프로젝트란 하나의 챗봇에 적용되는 데이터 세트를 의미합니다.
+                             프로젝트를 생성하면 시스템에는 프로젝트의 이름과 함께 네 개의 새로운 폴더가 만들어 집니다.
+            </p>
+            <ul class="list-unstyled">
+                <li>intents : 인텐트 결과값</li>
+                <li>intents_work : 인텐트 편집 파일</li>
+                <li>entities : 엔트리 값들로 합쳐진 엔티티값</li>
+                <li>entries : 사용자가 임의로 올리는 용어</li>
+                <li>sentences : 사용자가 임의로 등록하는 문장</li>
+            </ul>
+            <p class="text-break mb-0">분석, 정제는 sentences 폴더에 저장된 문장을 중심으로 처리 됩니다.</p>
+            <p class="text-break">Entity 편집은 entries 폴더에 올라온 파일 내에 나열된 데이터를 중심으로 entities에 값을 저장합니다.</p>
+            <form id='frmProject'>
+                <div class="row mb-0">
+                    <div class="form-group col-7 pr-0">
+                        <label for="txtProjectName">프로젝트 이름 (영문, 최대 25자)</label>
+                        <input type="text" class="form-control" id="txtProjectName" name="txtProjectName" placeholder="프로젝트 이름" data-istooltip="false" required>
+                    </div>
+                    <div id="divDummy"></div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-7 pr-0">
+                        <label for="txtProjectAlias">프로젝트 별칭 (프로젝트 이름 선택창에 표시 됩니다.)</label>
+                        <input type="text" class="form-control" id="txtProjectAlias" name="txtProjectAlias" placeholder="프로젝트 별칭">
+                    </div>
+                </div>
+                <div class='text-right col-7 pr-0'>
+                    <button type="button" class="btn btn-primary" id="btnNewProject" data-path="project-confirm">프로젝트 생성</button>
+                </div>
+            </form>
+        </div>
+        <div class='col-md-3 mb-5'></div>
+    </div>
+</div>
+<!-- 프로젝트 생성 오류  Modal dialog -->
+<div class="modal fade" id="mdlMkPrjError" tabindex="-1" role="dialog" aria-labelledby="mdlMkPrjError" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">프로젝트 생성 실패</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="닫기">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="text-left">
+                    <p>프로젝트를 생성할 수 없습니다. 입력 내용 확인 후 다시 실행해 주시기 바랍니다.</p>
+                </div>
+                <div class="text-right">
+                    <button type="button" id="btnClose" class="btn btn-primary" data-dismiss="modal">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/chatcor/chatcor-project.js"></script>

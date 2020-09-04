@@ -1,0 +1,184 @@
+<div class="container-fluid">
+    <div class='mt-2 mb-4 pl-2'>
+        <h3>Entity 편집</h3>
+    </div>
+    <div class='d-flex flex-row mb-4 pl-2'>
+        <div id='divEntityBodyL' class='col-3 mr-1 pl-0 d-none'>
+            <form id='frmEntry'>
+                <div class="form-group mb-1 pr-3">
+                    <div class='mb-1'>
+                        <label for="selEntryFile">Entry 파일 이름</label>
+                        <select id="selEntryFile" class="form-control form-control-sm" name="selEntryFile"></select>
+                    </div>
+                    <div class='text-right'>
+                        <button id="btnAddEntry" type="button" class="btn btn-secondary btn-sm">Entity 용어 추가</button>
+                    </div>
+                </div>
+                <div id="divEntryList" class="form-group mb-1 vh-80 overflow-y-scroll"></div>
+            </form>
+        </div>
+        <div id='divEntityBodyR' class='col-8 mr-1 pl-0 d-none'>
+            <form id='frmEntity'>
+                <div class="d-flex flex-row form-group mb-0">
+                    <div class="col-5 form-group mb-1">
+                        <div class='mb-1'>
+                            <label for="selEntityFile">Entity 파일 이름</label>
+                            <select id="selEntityFile" class="form-control form-control-sm" name="selEntityFile"></select>
+                        </div>
+                        <div class='text-right'>
+                            <button id="btnNewEntity" type="button" class="btn btn-info btn-sm">Entity 생성</button>
+                        </div>
+                    </div>
+                    <div class="col-5 form-group align-self-center text-left mb-0">
+                        <button id="btnNewEntityFile" type="button" class="btn btn-primary btn-sm">Entity File 생성</button>
+                    </div>
+                    <div class='col'></div>
+                </div>
+                <div class="d-flex flex-row form-group">
+                    <div id="divEntityList" class="col-5 form-group mb-1 vh-80 overflow-y-scroll"></div>
+                    <div id="divEntityEntries" class='col-5 form-group vh-80 mb-1 mr-0 d-none'>
+                        <div class='form-group vh-5 mb-3 text-center'>
+                            <p class='mb-1'><strong>Entity에 포함된 용어</strong></p>
+                        </div>
+                        <div id="divInEntries" class='form-group vh-72 overflow-y-scroll mb-0'></div>
+                    </div>
+                    <div id="divBtnEntries" class='col vh-80 mb-1 ml-0 pt-4 d-none'>
+                        <button id="btnDelEntry" type="button" class="btn btn-secondary btn-sm mb-1">용어 삭제</button>
+                        <button id="btnNewEntry" type="button" class="btn btn-secondary btn-sm mt-1">용어 생성</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Entity 파일 생성 Modal -->
+<div class="modal fade" id="mdlNewEntityFile" tabindex="-1" role="dialog" aria-labelledby="mdlNewEntityFile" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="lblMdlNewEntityFile">Entity 파일 신규 생성</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="닫기">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="text-left">
+                    <p class="mb-0">Entity는 같은 의미를 갖는 용어들의 집합이며, Entity ID는 이 모든 용어를 대표하는 단어가 되어야 합니다.</p>
+                    <p>Entity File은 여럿의 Entity를 포함할 수 있습니다. 챗봇에 표준으로 생성됩니다.</p>
+                </div>
+                <form>
+                    <div class="form-group mb-1">
+                        <div class="col-8">
+                            <label for="txtEntityFileName" class="col-form-label">파일 이름 (영문-마침표 허용, 최대 25자)</label>
+                            <input type="text" id="txtEntityFileName" class="form-control">
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row form-group">
+                        <div class="col-8 ">
+                            <label for="txtFirstEntityName" class="col-form-label">첫번째 Entity ID 이름</label>
+                            <input type="text" id="txtFirstEntityName" class="form-control">
+                        </div>
+                        <div class="col-3 align-self-end">
+                            <button type="button" id="btnMdlNewEntityFile" class="btn btn-primary" data-toggle="modal">생성</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Entity 파일 생성 성공 dialog -->
+<div class="modal fade" id="mdlEntityFileSuccess" tabindex="-1" role="dialog" aria-labelledby="mdlEntityFileSuccess" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="mdlEntityFileSuccess">Entity 파일 신규 생성</h5>
+            </div>
+            <div class="modal-body">
+                <div class="text-left">
+                    <p>파일이 성공적으로 생성되었습니다.</p>
+                </div>
+                <div class="text-right">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Entity 파일 생성 실패 dialog -->
+<div class="modal fade" id="mdlEntityFileFail" tabindex="-1" role="dialog" aria-labelledby="mdlEntityFileFail" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="mdlEntityFileFail">Entity 파일 신규 생성</h5>
+            </div>
+            <div class="modal-body">
+                <div class="text-left">
+                    <p>같은 이름의 Entity File이 이미 존재합니다.</p>
+                </div>
+                <div class="text-right">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Entity 생성 Modal -->
+<div class="modal fade" id="mdlNewEntity" tabindex="-1" role="dialog" aria-labelledby="mdlNewEntity" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="lblMdlNewEntity">Entity 신규 생성</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="닫기">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="text-left">
+                    <p>Entity는 같은 의미를 갖는 용어들의 집합이며, Entity의 ID는 이 모든 용어를 대표하는 단어가 되어야 합니다. 하나의 프로젝트 내에서 이 엔티티의 값은 유일해야 합니다.</p>
+                </div>
+                <form>
+                    <div class="d-flex flex-row form-group">
+                        <div class="col-8 ">
+                            <label for="txtEntityName" class="col-form-label">엔티티 이름</label>
+                            <input type="text" id="txtEntityName" class="form-control">
+                        </div>
+                        <div class="col-3 align-self-end">
+                            <button type="button" id="btnMdlNewEntity" class="btn btn-primary">생성</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 임의용어 생성 Modal -->
+<div class="modal fade" id="mdlNewInEntry" tabindex="-1" role="dialog" aria-labelledby="mdlNewInEntry" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="lblMdlNewInEntry">용어(Entry) 임의 생성</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="닫기">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="text-left">
+                    <p>엔트리는 자유롭게 입력할 수 있습니다. 다만, 입력된 엔트리는 해당 엔티티 내에서는 유일값이어야 합니다.</p>
+                </div>
+                <form>
+                    <div class="d-flex flex-row form-group">
+                        <div class="col-8 ">
+                            <label for="txtInEntryName" class="col-form-label">용어 이름</label>
+                            <input type="text" id="txtInEntryName" class="form-control">
+                        </div>
+                        <div class="col-3 align-self-end">
+                            <button type="button" id="btnMdlNewInEntry" class="btn btn-primary">생성</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/chatcor/chatcor-entity.js"></script>

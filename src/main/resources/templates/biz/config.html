@@ -1,0 +1,131 @@
+<div class="container-fluid">
+    <div class='mt-2 mb-4 pl-2'>
+        <h3>설정 및 관리</h3>
+    </div>
+    <div class='row mb-4 pl-2'>
+        <div class='col-md-8'>
+            <p>향후 시스템 확장을 위하여 누구나 기능을 추가할 수 있습니다. 챗봇 데이터 편집이나 다양한 형태의 기능을 보완할 수 있습니다.</p>
+        </div>
+        <div class='col-md-4'></div>
+    </div>
+    
+    <!-- 사용자 계정 관리 -->
+    <div class='mb-2 pl-2'>
+        <h4 style = "float : left; margin-right:10px;">사용자 계정 관리</h4>
+        <button class="btn btn-primary" onclick="loadHtml(this);" data-path="account.html">사용자 추가</button>
+    </div>    
+    <div id="user-contents" class='vh-30 overflow-auto mb-4 pl-2'></div>
+    
+    <div class='mb-2 pl-2'>
+        <h4>프로젝트 삭제</h4>
+    </div>
+    <div id="projects-contents" class='vh-30 overflow-auto mb-4 pl-2'></div>
+</div>
+<!-- 프로젝트 삭제 확인 Modal dialog -->
+<div class="modal fade" id="mdlDelProject" tabindex="-1" role="dialog" aria-labelledby="mdlDelProject" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">프로젝트 삭제</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="닫기">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="text-left mb-2">
+                    <p class="mb-1">작업한 모든 로그데이터와 폴더가 삭제됩니다.</p>
+                    <p>계속 진행하시겠습니까?</p>
+                </div>
+                <div class="text-left mb-2">
+                    <p class="mb-1">삭제 대상 프로젝트 이름을 다시 한 번 확인해 주시고 삭제 버튼을 클릭해 주세요.</p>
+                </div>
+                <div class='row text-center'>
+                    <div class="col-8 pr-0 mr-0">
+                        <input type="text" class="form-control" id="txtDelProjectId" name="txtDelProjectId" readonly>
+                    </div>
+                    <div class="col-4 pl-0 pr-0">
+                        <button type="button" id="btnDelProject" class="btn btn-primary" data-toggle="modal" data-target="#mdlDelProjectConfirm" data-prjid>삭제</button>
+                        <button type="button" id="btnCloseProject" class="btn btn-primary" data-dismiss="modal">취소</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 프로젝트 삭제 완료 Modal dialog -->
+<div class="modal fade" id="mdlDelFnProject" tabindex="-1" role="dialog" aria-labelledby="mdlDelFnProject" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">프로젝트 삭제</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="닫기">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="text-left mb-2">
+                    <p class="mb-1">프로젝트 정보를 삭제하였습니다.</p>
+                </div>
+                <div class='text-right'>
+                    <button type="button" id="btnCloseDelFnProject" class="btn btn-primary" data-dismiss="modal">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 유저 삭제 확인 Modal dialog -->
+<div class="modal fade" id="mdlDelUser" tabindex="-1" role="dialog" aria-labelledby="mdlDelUser" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">유저계정 삭제</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="닫기">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="text-left mb-2">
+                    <p class="mb-1">선택한 유저의 정보가 삭제됩니다.</p>
+                    <p>계속 진행하시겠습니까?</p>
+                </div>
+                <div class="text-left mb-2">
+                    <p class="mb-1">삭제 대상 유저계정을 다시 한 번 확인해 주시고 삭제 버튼을 클릭해 주세요.</p>
+                </div>
+                <div class='row text-center'>
+                    <div class="col-8 pr-0 mr-0">
+                        <input type="text" class="form-control" id="txtDelUserId" name="txtDelUserId" readonly>
+                    </div>
+                    <div class="col-4 pl-0 pr-0">
+                        <button type="button" id="btnDelUser" class="btn btn-primary" data-toggle="modal" data-target="#mdlDelUserConfirm" data-useremail>삭제</button>
+                        <button type="button" id="btnCloseUser" class="btn btn-primary" data-dismiss="modal">취소</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 유저 삭제 완료 Modal dialog -->
+<div class="modal fade" id="mdlDelFnUser" tabindex="-1" role="dialog" aria-labelledby="mdlDelFnUser" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">유저계정 삭제</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="닫기">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="text-left mb-2">
+                    <p class="mb-1">유저 정보를 삭제하였습니다.</p>
+                </div>
+                <div class='text-right'>
+                    <button type="button" id="btnCloseDelFnUser" class="btn btn-primary" data-dismiss="modal">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/chatcor/chatcor-config.js"></script>
+    <script src="js/chatcor/core/chatcor-core.js"></script>

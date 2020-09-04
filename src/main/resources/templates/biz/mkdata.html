@@ -20,6 +20,7 @@
                             <input type="checkbox" class="custom-control-input" id="cbxEntity" name="cbxEntity" checked>
                             <label class="custom-control-label" for="cbxEntity">Entity</label>
                         </div>
+                        <div id="divDummy"></div>
                     </div>
                 </div>
                 <div class="form-group  col-7">
@@ -32,6 +33,27 @@
             </form>
         </div>
         <div class='col-md-3 mb-5'></div>
+    </div>
+</div>
+<!-- 데이터 생성 완료 Modal dialog -->
+<div class="modal fade" id="mdlMakeData" tabindex="-1" role="dialog" aria-labelledby="mdlMakeData" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">데이터 생성</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="닫기">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="text-left">
+                    <p>데이터 생성이 완료되었습니다. 해당 폴더에서 해당 압축파일을 다운로드 받은 뒤, 각 챗봇 시스템의 업로드 절차에 따라서 파일을 업로드 하기 바랍니다.</p>
+                </div>
+                <div class="text-right">
+                    <button type="button" id="btnClose" class="btn btn-primary" data-dismiss="modal">확인</button>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 <script src="js/chatcor/chatcor-mkdata.js"></script>

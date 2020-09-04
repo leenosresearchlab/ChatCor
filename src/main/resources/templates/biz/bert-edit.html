@@ -1,0 +1,115 @@
+<div class="container-fluid">
+	<h3>BERT 학습데이터 편집</h3>
+    <div id='divBertEditBody'>
+	    <div class='mt-2 mb-4 pl-2'>
+	        <span id="spanProjectVersion">버전정보 : </span>
+	        <button id="btnChangeVersion" type="button" class="btn btn-primary btn-sm">버전변경</button>
+	    </div>
+    	<form>
+    		<div>
+    			<div style="display:inline-block; text-align:center; margin-right:30px;">
+    				<label for="selBertEdit">편집 구분</label>
+			    	<select id="selBertEdit" name="selBertEdit" class="form-control" align="center" style="width:auto; text-align-last:center;"></select>
+    			</div>
+		        <div style="display:inline-block; text-align:center;">
+		        	<label for="selBertFile">파일이름</label>
+		    		<select id="selBertFile" name="selBertFile" class="form-control" align="center" style="width:auto; text-align-last:center"></select>
+		        </div>
+		    	
+		    	<!-- <label for="selBertVersion">버전정보</label>
+		        <select id="selBertVersion" name="selBertVersion" class="form-control" style="width:auto;"></select> -->
+    		</div>	        
+	        <textarea id="txtAreaBertContents" class="form-control" rows="20" placeholder="여기서 작업해 주시면 됩니다." style="resize:none;"></textarea>
+    		<!-- <button id="btnCheck" type="button" class="btn btn-primary btn-sm">구문검수</button> -->
+    		<button id="btnBertSave" type="button" class="btn btn-primary btn-sm">저장</button>
+    	</form>
+    </div>
+</div>
+<!-- 저장완료  Modal dialog -->
+<div class="modal fade" id="mdlSaveComplete" tabindex="-1" role="dialog" aria-labelledby="mdlSaveComplete" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <!-- <div class="modal-header">
+                <h5 class="modal-title">프로젝트 버전 변경</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="닫기">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div> -->
+            <div class="modal-body">
+                <div class="text-left">
+                    <p>저장이 완료되었습니다.</p>
+                </div>
+                <div class="text-right">
+                    <button type="button" id="btnComplete" class="btn btn-primary" data-dismiss="modal">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 버젼변경  Modal dialog -->
+<div class="modal fade" id="mdlChangeVersion" tabindex="-1" role="dialog" aria-labelledby="mdlChangeVersion" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">프로젝트 버전 변경</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="닫기">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="text-left">
+                    <p>프로젝트의 버전을 올리시겠습니까?</p>
+                </div>
+                <div class="text-right">
+                    <button type="button" id="btnChange" class="btn btn-primary" data-dismiss="modal">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 편집구분 확인  Modal dialog -->
+<div class="modal fade" id="mdlCheckEdit" tabindex="-1" role="dialog" aria-labelledby="mdlCheckEdit" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">프로젝트 버전 변경</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="닫기">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="text-left">
+                    <p>편집 구분을 선택해 주십시오.</p>
+                </div>
+                <div class="text-right">
+                    <button type="button" id="btnCheckEdit" class="btn btn-primary" data-dismiss="modal">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 버전변경 확인  Modal dialog -->
+<div class="modal fade" id="mdlCheckVersion" tabindex="-1" role="dialog" aria-labelledby="mdlCheckVersion" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">프로젝트 버전 변경</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="닫기">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="text-left">
+                    <p>버전변경이 완료되었습니다.</p>
+                </div>
+                <div class="text-right">
+                    <button type="button" id="btnCheckVersion" class="btn btn-primary" data-dismiss="modal">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/chatcor/chatcor-bert-edit.js"></script>

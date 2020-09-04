@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chatcor.biz.dao.UserMapper">
+
+    <select id="selectUserDetails" parameterType="string" resultType="map">
+        SELECT USER_NAME AS userName
+             , USER_EMAIL AS userEmail
+             , USER_PASSWORD AS userPwd
+             , USER_ROLE AS userAuth
+          FROM USERS
+         WHERE USER_EMAIL = #{userEmail};
+    </select>
+
+    <select id="selectUserEmail" parameterType="string" resultType="int">
+        SELECT COUNT(1)
+          FROM USERS
+         WHERE USER_EMAIL = #{userEmail};
+    </select>
+
+    <insert id="insertUser" parameterType="hashmap">
+        INSERT INTO USERS (USER_NAME, USER_EMAIL, USER_PASSWORD, USER_ROLE)
+             VALUES (#{user_name}, #{user_email}, #{user_pwd}, 'ROLE_USER')
+    </insert>
+    
+    <select id="selectAllUser" parameterType="string" resultType="hashmap">
+        SELECT USER_NAME AS userName
+             , USER_EMAIL AS userEmail
+             , USER_PASSWORD AS userPwd
+             , USER_ROLE AS userAuth
+          FROM USERS
+          WHERE USER_EMAIL NOT IN (#{userEmail});
+    </select>
+    
+    <delete id="deleteUser" parameterType="String">
+    	DELETE FROM USERS
+    	WHERE USER_EMAIL = #{userEmail};
+    </delete>
+
+</mapper>

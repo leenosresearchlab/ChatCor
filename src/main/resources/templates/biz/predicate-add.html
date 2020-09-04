@@ -8,10 +8,10 @@
     <form id='frmPredicate'>
         <div class="row ml-3">
             <div class="form-group col-5">
-                <input type="text" class="form-control" id="txtTagName" name="txtTagName" placeholder="반복관용어구 태그명">
+                <input type="text" class="form-control form-control-sm" id="txtTagName" name="txtTagName" placeholder="반복관용어구 태그명">
             </div>
             <div class="form-group col-3">
-                <select class="form-control custom-select" id="selTagSuffix" name="selTagSuffix">
+                <select class="form-control custom-select form-control-sm" id="selTagSuffix" name="selTagSuffix">
                     <option value="">== 종결어미 선택 ==</option>
                     <option value="평서형">평서형</option>
                     <option value="의문형">의문형</option>
@@ -24,13 +24,13 @@
                 </select>
             </div>
             <div class="form-group col-2">
-                <button type="button" class="btn btn-primary" id="btnNewPredicate" data-path="predicate">생성</button>
+                <button type="button" class="btn btn-primary btn-sm" id="btnNewPredicate" data-path="predicate">생성</button>
             </div>
             <div class="col-2"></div>
         </div>
     </form>
     <div class="ml-5">
-        <label id="lblTagValue"></label>
+        <label id="lblTagValue" data-istooltip="false"></label>
     </div>
 </div>
 <script src="js/chatcor/chatcor-predicate.js"></script>

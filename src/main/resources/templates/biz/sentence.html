@@ -1,0 +1,72 @@
+<div class="container-fluid">
+    <div class='mt-2 mb-4 pl-2'>
+        <h3>문장 분석/정제/내용어 추출</h3>
+    </div>
+    <div id='divSentenceBody' class='row mb-4 pl-2 d-none'>
+        <!--<div class='col-5 mb-2 text-nowrap overflow-auto'>-->
+        <div id="divSentenceList" class='col-5 mb-2'></div>
+        <div id="divContentArea" class='col-7 mb-2'>
+            <div id="divBtnArea" class="mb-1 text-right" style="display: none;">
+                <button type="button" id="btnSave" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#contentModal" data-jsonfile="">내용어 추출</button>
+            </div>
+            <div id="divSentenceContent" class="mb-2 text-xl-left font-weight-bold"></div>
+            <div class="overflow-auto mb-2">
+                <div id="divWordList" class="d-flex flex-row mb-1"></div>
+                <div id="divEvalList" class="d-flex flex-row mb-1"></div>
+                <div id="divMorpList" class="d-flex flex-row mb-1"></div>
+                <div id="divPosList" class="d-flex flex-row mb-3"></div>
+                <div id="divCnclList" class="d-flex flex-row mb-1"></div>
+            </div>
+            <div id="divWorkingLog" class="vh-50 overflow-auto" style="display: none">
+                <p class="text-md-left mb-1">작업내역</p>
+                <ul id="ulLogList" class="list-unstyled"></ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 내용어 추출 Modal dialog -->
+<div class="modal fade" id="contentModal" tabindex="-1" role="dialog" aria-labelledby="contentModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="contentModalLabel">내용어 추출</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="닫기">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="text-left">
+                    <p>분석된 문장 내에서 내용어로 표시된 항목을 추출하여 파일로 생성합니다.</p>
+                </div>
+                <form>
+                    <div class="form-group">
+                        <label for="txtContentFileName" class="col-form-label">파일이름</label>
+                        <input type="text" id="txtContentFileName" class="form-control">
+                    </div>
+                </form>
+                <div class="text-right">
+                    <button type="button" id="btnCntExp" class="btn btn-primary" data-toggle="modal">추출</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 내용어 추출 완료 Modal dialog -->
+<div class="modal fade" id="contentFnModal" tabindex="-1" role="dialog" aria-labelledby="contentFnModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="contentFnModalLabel">내용어 추출</h5>
+            </div>
+            <div class="modal-body">
+                <div class="text-left">
+                    <p>파일 생성이 성공적으로 완료되었습니다. Entity 편집 화면의 첫 번째 열에서 생성된 파일을 선택하실 수 있습니다.</p>
+                </div>
+                <div class="text-right">
+                    <button type="button" id="btnCnFnClose" class="btn btn-primary" data-dismiss="modal">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/chatcor/chatcor-sentence.js"></script>

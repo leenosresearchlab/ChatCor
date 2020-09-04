@@ -1,0 +1,93 @@
+<div class="container-fluid">
+    <div class='mt-2 mb-4 pl-2'>
+        <h3>Intent 학습 문장 편집</h3>
+    </div>
+    <div id='divIntentBody' class='row mb-4 pl-2 d-none'>
+        <div class='col-md-8'>
+            <div class="text-left mb-1">
+                <p>Markdown 방법으로 챗봇의 인텐트를 구성하는 문장 프레임을 만들 수 있습니다.</p>
+            </div>
+            <form>
+                <div class="d-flex flex-row form-group mb-1">
+                    <div class="col-6 form-group pl-0">
+                        <label for="selIntentFile">파일 이름</label>
+                        <select id="selIntentFile" name="selIntentFile" class="form-control form-control-sm"></select>
+                    </div>
+                    <div class="col-4 form-group align-self-end pl-0">
+                        <button id="btnAddUserContents" type="button" class="btn btn-primary btn-sm">사용자 표현 추가</button>
+                    </div>
+                    <div class="col-2 form-group"></div>
+                </div>
+                <div id="divUserContents" class="form-group mb-2 vh-50 overflow-x-scroll overflow-y-scroll"></div>
+                <div class="d-flex justify-content-between mb-1">
+                    <div class="col pl-0">
+                        <button id="btnValidContents" type="button" class="btn btn-primary btn-sm">문법 검증</button>
+                    </div>
+                    <div class="col"></div>
+                    <div class="col d-flex justify-content-end pr-0">
+                        <button id="btnModContent" type="button" class="btn btn-primary btn-sm mr-1">수정</button>
+                        <button id="btnDelContent" type="button" class="btn btn-primary btn-sm">삭제</button>
+                    </div>
+                </div>
+                <div id="divValidContents" class="form-group mb-1 vh-40 overflow-x-scroll overflow-y-scroll"></div>
+            </form>
+        </div>
+        <div class='col-md-4'>
+            <div class="text-right mb-4">
+                <button type="button"  id="btnNewIntent" class="btn btn-primary btn-sm" data-path="intent-new">Intent 파일 신규 생성</button>
+            </div>
+            <div class="text-center d-none">
+                <p>생성 샘플 보기</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 사용자 표현 추가 Modal -->
+<div class="modal fade" id="mdlAddUserContents" tabindex="-1" role="dialog" aria-labelledby="mdlAddUserContents" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">새로운 표현식 추가</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="닫기">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="txtUserContents" class="col-form-label form-control-sm">사용자 표현</label>
+                        <input type="text" id="txtUserContents" class="form-control form-control-sm">
+                    </div>
+                    <div class="text-right">
+                        <button type="button" id="btnMdlAddUserContents" class="btn btn-primary btn-sm" data-dismiss="modal">생성</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 사용자 표현 수정  Modal -->
+<div class="modal fade" id="mdlModUserContents" tabindex="-1" role="dialog" aria-labelledby="mdlModUserContents" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">사용자 표현식 수정</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="닫기">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="txtModUserContents" class="col-form-label form-control-sm">사용자 표현</label>
+                        <input type="text" id="txtModUserContents" class="form-control form-control-sm">
+                    </div>
+                    <div class="text-right">
+                        <button type="button" id="btnMdlModUserContents" class="btn btn-primary btn-sm" data-dismiss="modal">수정</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/chatcor/chatcor-intent.js"></script>

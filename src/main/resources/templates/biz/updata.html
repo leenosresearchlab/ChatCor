@@ -1,0 +1,80 @@
+<div class="container-fluid">
+    <div class='mt-2 mb-4 pl-2'>
+        <h3>데이터 업로드</h3>
+    </div>
+    <div class='row mb-4 pl-2'>
+        <div class='col-md-10 mb-5'>
+            <p class="text-break">
+                            외부에서 수집된 용어 목록이나 분석하고자 하는 문장을 업로드 할 수 있습니다. 일반 문서 자료도 업로드 되면 문장 단위로 분절 되며, 개별 파일에 저장됩니다.
+            </p>
+            <form id='frmUpData' enctype="multipart/form-data">
+                <div class="form-group col-7">
+                    <label for="selUpProjects">프로젝트 이름</label>
+                    <select class="form-control" id="selUpProjects" name="selUpProjects"></select>
+                    <div class='row mt-2 pl-3'>
+                        <div class="custom-control custom-radio mr-5">
+                            <input type="radio" class="custom-control-input" id="rdEntity" name="rdSelInfo" value="1">
+                            <label class="custom-control-label" for="rdEntity">용어 정보</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" class="custom-control-input" id="rdSentence" name="rdSelInfo" value="2">
+                            <label class="custom-control-label" for="rdSentence">문장 정보</label>
+                        </div>
+                        <div id="divDummyOpt" class="ml-1"></div>
+                    </div>
+                </div>
+                <div class="form-group col-7">
+                    <label for="flUpFileData" id="lblSelFile">파일 선택</label>
+                    <input type="file" id="flUpFileData" name="flUpFileData">
+                </div>
+                <div class='text-right col-7'>
+                    <button type="button" class="btn btn-primary" id="btnUpData">업로드</button>
+                </div>
+            </form>
+        </div>
+        <div class='col-md-3 mb-5'></div>
+    </div>
+</div>
+<!-- 업로드 성공 Modal -->
+<div class="modal fade" id="mdlUpDataY" tabindex="-1" role="dialog" aria-labelledby="mdlUpDataY" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title alert alert-success" role="alert">데이터를 성공적으로 업로드 했습니다.</h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="닫기">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="text-left">
+                    <p>용어나 문장 정보 페이지에서 데이터를 수정하세요.</p>
+                </div>
+                <div class="text-right">
+                    <button type="button" id="btnCloseY" class="btn btn-primary" data-dismiss="modal">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 업로드 실패 Modal -->
+<div class="modal fade" id="mdlUpDataN" tabindex="-1" role="dialog" aria-labelledby="mdlUpDataN" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title alert alert-danger" role="alert">데이터 업로드에 문제가 있습니다.</h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="닫기">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="text-left">
+                    <p>같은 이름의 파일이 이미 존재하거나, 시스템에 문제가 있습니다.</p>
+                </div>
+                <div class="text-right">
+                    <button type="button" id="btnCloseN" class="btn btn-primary" data-dismiss="modal">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/chatcor/chatcor-updata.js"></script>

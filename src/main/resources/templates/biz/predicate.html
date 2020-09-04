@@ -1,0 +1,30 @@
+<div class="container-fluid">
+    <div class='mt-2 mb-4 pl-2'>
+        <h3>반복 관용어구 편집</h3>
+    </div>
+    <div id='divPredicateBody' class="row mb-2 pl-2 d-none">
+        <div class="col-10 text-right">
+            <button type="button" class="btn btn-primary btn-sm" id="btnAddPredicate" data-path="predicate-add">반복관용어구 추가</button>
+        </div>
+        <div class="col-2"></div>
+    </div>
+    <div id="predicate-contents" class='mb-4 pl-2'></div>
+</div>
+<!-- 관용어구 완료 Modal dialog -->
+<div class="modal fade" id="mdlModifyPredicate" tabindex="-1" role="dialog" aria-labelledby="mdlModifyPredicate" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="text-center">
+                    <h5>관용어구의 내용을 수정하였습니다.</h5>
+                </div>
+                <div id="divModifyPredicate" class="text-center"></div>
+                <div class="text-right">
+                    <button type="button" id="btnClose" class="btn btn-primary btn-sm" data-dismiss="modal">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/chatcor/chatcor-predicate.js"></script>
+

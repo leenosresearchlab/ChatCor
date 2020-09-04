@@ -1,0 +1,34 @@
+<div class="container-fluid">
+    <div class='mt-2 mb-4 pl-2'>
+        <h3>Intent 신규 생성</h3>
+    </div>
+    <div class='row mb-4 pl-2'>
+        <div class='col-md-9'>
+            <div class="text-left mb-1">
+                <p class="mb-0">Markdown 방법으로 챗봇의 인텐트를 구성하는 문장 프레임을 만들 수 있습니다.</p>
+                <p>인텐트를 만들기 전에는 반드시 "문법검증" 버튼을 눌러 반복문형과 엔티티가 모두 들어와 있는지<br/>확인합니다.</p>
+            </div>
+            <form>
+                <div class="d-flex flex-row form-group mb-1">
+                    <div class="col-6 mr-0 pl-1">
+                        <label for="txtIntentName" class="col-form-label" data-exists="false">인텐트 이름 (영문-마침표 허용, 최대 30자)</label>
+                        <input type="text" id="txtIntentName" class="form-control form-control-sm">
+                    </div>
+                    <div class="d-flex align-items-end ml-1">
+                        <button type="button" id="btnValidIntent" class="btn btn-primary btn-sm" data-isvalid="false">문법 검증</button>
+                    </div>
+                    <div class="d-flex align-items-end ml-1">
+                        <button type="button" id="btnCreateIntent" class="btn btn-primary btn-sm">생성</button>
+                    </div>
+                </div>
+                <div class="form-group mt-0 mb-2 pl-1">
+                    <label for="txtFirstIntent" class="col-form-label">첫번째 문형 프레임</label>
+                    <input type="text" id="txtFirstIntent" class="form-control form-control-sm">
+                </div>
+                <div id="divValidIntent" class="vh-20 overflow-y-scroll"></div>
+            </form>
+        </div>
+        <div class='col-md-3'></div>
+    </div>
+</div>
+<script src="js/chatcor/chatcor-intent.js"></script>

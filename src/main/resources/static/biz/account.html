@@ -1,0 +1,70 @@
+<div class="container-fluid">
+    <div class='mt-2 mb-4 pl-2'>
+        <h3>신규사용자 등록</h3>
+    </div>
+    <div class='row mb-1 pl-2'>
+        <div class='col-7 mb-2'>
+            <p class="mb-1">ChatCor 시스템을 사용하기 위해서는 사용자 등록을 해야합니다.</p>
+            <p>원하는 이름과 이메일, 비밀번호를 입력해 주세요.</p>
+        </div>
+        <div class='col-5 mb-2'></div>
+    </div>
+    <form id="frmAccount" autocomplete="off">
+        <div class='mb-4 pl-2'>
+            <div class="form-row mb-2">
+                <div class='col-5'>
+                    <label for="txtUserName" class="mb-0">이름 (한글 기준 최대 15자, 알파벳 45자)</label>
+                    <input id="txtUserName" type="text" class="form-control">
+                </div>
+                <div class='col'></div>
+            </div>
+            <div class="form-row mb-2">
+                <div class='col-5'>
+                    <label for="txtUserEmail" class="mb-0">이메일 (최대 50자)</label>
+                    <input id="txtUserEmail" type="text" class="form-control">
+                </div>
+                <div class='col'></div>
+            </div>
+            <div class="form-row mb-2">
+                <div class='col-5'>
+                    <label for="pwdUserPassword1" class="mb-0">비밀번호 (8자 ~ 16자)</label>
+                    <input id="pwdUserPassword1" type="password" class="form-control">
+                </div>
+                <div class='col'></div>
+            </div>
+            <div class="form-row mb-2">
+                <div class='col-5'>
+                    <label for="pwdUserPassword2" class="mb-0">비밀번호 확인</label>
+                    <input id="pwdUserPassword2" type="password" class="form-control">
+                </div>
+                <div class='col'></div>
+            </div>
+            <div class="form-row mt-4">
+                <div class='text-right col-5'>
+                    <button id="btnAccount" type="button" class="btn btn-primary">사용자 등록</button>
+                </div>
+                <div class='col'></div>
+            </div>
+        </div>
+    </form>
+</div>
+<!-- 사용자 등록 Modal -->
+<div class="modal fade" id="mdlNewAccount" tabindex="-1" role="dialog" aria-labelledby="mdlNewAccount" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">사용자 등록</h5>
+            </div>
+            <div class="modal-body">
+                <div class="text-left">
+                    <p class="mb-0">새로운 사용자가 등록되었습니다.</p>
+                    <p>사용자 이메일과 비밀번호를 이용해 로그인해 주시기 바랍니다.</p>
+                </div>
+                <div class="text-right">
+                    <button type="button" id="btnNewAccountClose" class="btn btn-primary" data-dismiss="modal">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/chatcor/chatcor-account.js"></script>
