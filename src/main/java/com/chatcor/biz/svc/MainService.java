@@ -18,8 +18,12 @@ import com.chatcor.biz.model.DataCommand;
 public interface MainService {
 
     public Map<String, Object> createProject(Map<String, Object> project) throws Exception;
+    
+    public Map<String, Object> createBertProject(Map<String, Object> project) throws Exception;
 
     public boolean hasProject(String name) throws Exception;
+
+    public boolean removeProject(String name) throws Exception;
 
     public Map<String, List<Object>> getProjectMap() throws Exception;
 
@@ -28,11 +32,15 @@ public interface MainService {
     public Map<String, Object> makeProjectData(Map<String, Object> project) throws Exception;
 
     public List<Map<String, Object>> getPredicates(String projectName) throws Exception;
-
+    
     public Map<String, Object> uploadDataFile(DataCommand model) throws Exception;
 
     public Map<String, Object> createPredicate(Map<String, Object> predicate) throws Exception;
 
-    public  Map<String, List<Object>> getSentences(String projectName) throws Exception;
+    public Map<String, Object> removePredicate(Map<String, Object> predicate) throws Exception;
+
+    public Map<String, Object> modifyPredicate(Map<String, Object> predicate) throws Exception;
+
+    public boolean hasPredicate(Map<String, Object> predicate) throws Exception;
 
 }

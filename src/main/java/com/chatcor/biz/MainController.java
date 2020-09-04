@@ -30,7 +30,7 @@ public class MainController {
     @RequestMapping(value = "/navi")
     public String loadPage(String viewName) throws Exception {
         logger.info(viewName);
-        return viewName;
+        return "biz/".concat(viewName);
     }
 
     @RequestMapping(value = "/projects", method = RequestMethod.POST)

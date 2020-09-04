@@ -1,3 +1,7 @@
+/* footer 높이 재지정 */
+footer.sticky-footer {
+    height: 60px !important;
+}
 
 /* Tooltip 가로 크기 다시 지정  */
 .tooltip-inner {
@@ -8,10 +12,105 @@
     height: 60px !important;
 }
 
+.badge-h40p {
+    height: 40px !important;
+}
+
 .min-w74p {
     min-width: 74px !important;
 }
 
 .max-w74p {
     max-width: 74px !important;
+}
+
+.vh-5 {
+  height: 5vh !important;
+}
+
+.vh-20 {
+  height: 20vh !important;
+}
+
+.vh-30 {
+  height: 30vh !important;
+}
+
+.vh-40 {
+  height: 40vh !important;
+}
+
+.vh-60 {
+  height: 60vh !important;
+}
+
+.vh-50 {
+  height: 50vh !important;
+}
+
+.vh-72 {
+  height: 72vh !important;
+}
+.vh-80 {
+  height: 80vh !important;
+}
+
+.overflow-x-scroll {
+  overflow-x: scroll !important;
+}
+
+.overflow-y-scroll {
+  overflow-y: scroll !important;
+}
+
+/* 사용자 등록 & 로그인  */
+.modal-login {
+    width: 350px;
+}
+
+.modal-login .modal-content {
+    padding: 20px;
+    border-radius: 1px;
+    border: none;
+}
+
+.modal-login .modal-header {
+    border-bottom: none;
+    position: relative;
+    justify-content: center;
+}
+
+.modal-login h4 {
+    text-align: center;
+    font-size: 26px;
+}
+
+.modal-login .form-control, .modal-login .btn {
+    min-height: 40px;
+    border-radius: 1px; 
+}
+
+.modal-login .hint-text {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.modal-login .close {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+}
+
+.modal-login .btn {
+    background: #3498db;
+    border: none;
+    line-height: normal;
+}
+
+.modal-login .btn:hover, .modal-login .btn:focus {
+    background: #248bd0;
+}
+
+.modal-login .hint-text a {
+    color: #999;
 }
